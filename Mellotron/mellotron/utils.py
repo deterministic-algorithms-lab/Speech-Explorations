@@ -11,9 +11,9 @@ def get_mask_from_lengths(lengths):
     return mask
 
 def load_wav_to_torch(full_path, final_sr=22050):
-        audio, sampling_rate = sf.read(full_path, dtype='int16')
+    audio, sampling_rate = sf.read(full_path, dtype='int16')
     if sampling_rate!=final_sr:
-        print("Sampling rate ", sampling_rate, "is not equal to hparams.sampling_rate. Using librosa to convert.")
+        print("Sampling rate ", sampling_rate, " is not equal to hparams.sampling_rate. Using librosa to convert.")
         audio = librosa.resample(audio.astype(np.float32), sampling_rate, final_sr)
     data = audio.astype(np.int16)
     return torch.FloatTensor(data.astype(np.float32)), final_sr
