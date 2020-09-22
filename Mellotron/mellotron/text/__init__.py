@@ -43,7 +43,7 @@ def text_to_sequence(text, cleaner_names, dictionary=None, p_arpabet=1.0):
     if not m:
       clean_text = _clean_text(text, cleaner_names)
       if cmudict is not None:
-        words = _words_re.findall(text)
+        words = _words_re.findall(clean_text if 'transliteration_cleaners' in cleaner_names else text)
         clean_text = [
           get_arpabet(word[0], dictionary)
           if ((word[0] != '') and random.random() < p_arpabet) else word[1]
@@ -51,18 +51,15 @@ def text_to_sequence(text, cleaner_names, dictionary=None, p_arpabet=1.0):
 
         for i in range(len(clean_text)):
             t = clean_text[i]
-            if t.startswith("{"):
-              sequence += _arpabet_to_sequence(t[1:-1])
-            else:
-              sequence +=  _symbols_to_sequence(t)
-            #sequence += space
+            sequence +=  _symbols_to_sequence(t)
       else:
         sequence += _symbols_to_sequence(clean_text)
       break
-
-    sequence += text_to_sequence(m.group(1), cleaner_names, dictionary, p_arpabet)
-    sequence += _arpabet_to_sequence(m.group(2))
-    text = m.group(3)
+    
+    else:
+      sequence += text_to_sequence(m.group(1), cleaner_names, dictionary, p_arpabet)
+      sequence += _arpabet_to_sequence(m.group(2))
+      text = m.group(3)
 
   return sequence
 
