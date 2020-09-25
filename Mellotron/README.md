@@ -9,3 +9,5 @@
 4. **mello_train.ipynb** : To train the model in various modes.
 
 5. The model has two kinds of inference. [One](https://github.com/NVIDIA/mellotron/blob/d4746169ea570d3aa8e5c6dfca91b818e7c01eb6/model.py#L621) where attention is calculated. And [another](https://github.com/NVIDIA/mellotron/blob/d4746169ea570d3aa8e5c6dfca91b818e7c01eb6/model.py#L653) where attention is provided. This provided attention acts as rhythm. The ```style_input``` can either be a mel-spectrogram or an integer, in both inference functions. 
+
+6. **eval-single_speaker(en).ipynb** : Evaluating model trained on single speaker LJS data, for style transfer. 
