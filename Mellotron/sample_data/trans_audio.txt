@@ -4,4 +4,4 @@
 /content/drive/My Drive/sample_data/517.wav|असमान दिन दुबई के पक्ष में दलील दी और अपने लैपटॉप पर बुर्ज खलीफा और काम जो मेरा के कंस्ट्रक्शन की तस्वीर है और उनके चिड़ी प्रेजेंटेशन दिखाएं|1|0
 /content/drive/My Drive/sample_data/eng1.wav|This meant shafts, tunnels, hydraulic machinery, stamp mills.|2|1
 /content/drive/My Drive/sample_data/eng2.wav|And what was her present behaviour more than that of a fine lady who considered form and show as essential ingredients of human happiness, and imagined all friendship to consist in ceremony, courtesies, messages, and visits?|3|1
-/content/drive/My Drive/LJ037-0171.wav|The examination and testimony of the experts enabled the Commission to conclude that five shots may have been fired,|0|0
+/content/drive/My Drive/LJ037-0171.wav|The examination and testimony of the experts enabled the Commission to conclude that five shots may have been fired,|4|1
