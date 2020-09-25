@@ -51,7 +51,10 @@ def text_to_sequence(text, cleaner_names, dictionary=None, p_arpabet=1.0):
 
         for i in range(len(clean_text)):
             t = clean_text[i]
-            sequence +=  _symbols_to_sequence(t)
+            if t.startswith("{"):
+              sequence += _arpabet_to_sequence(t[1:-1])
+            else:
+              sequence +=  _symbols_to_sequence(t)
       else:
         sequence += _symbols_to_sequence(clean_text)
       break
